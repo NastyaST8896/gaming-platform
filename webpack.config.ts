@@ -25,7 +25,7 @@ export default (env: EnvVariables) => {
             clean: true,
         },
         plugins: [
-            new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
+            new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'home.html') }),
            isProd && new MiniCssExtractPlugin( {
                 filename: 'css/[name].[contenthash:8].css',
                 chunkFilename: 'css/[name].[contenthash:8].css',
@@ -46,6 +46,11 @@ export default (env: EnvVariables) => {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/,
+                },
+
+                {
+                    test: /\.html$/i,
+                    loader: "html-loader",
                 },
             ],
         },
