@@ -25,16 +25,24 @@ export default (env: EnvVariables) => {
             clean: true,
         },
         plugins: [
-            new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'home.html') }),
-           isProd && new MiniCssExtractPlugin( {
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, 'public', 'index.html'),
+                filename: 'index.html'
+            }),
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, 'public', 'about.html'),
+                filename: 'about.html'
+            }),
+
+            isProd && new MiniCssExtractPlugin( {
                 filename: 'css/[name].[contenthash:8].css',
                 chunkFilename: 'css/[name].[contenthash:8].css',
-            })
+            }),
         ],
         module: {
             rules: [
                 {
-                    test: /\.s[ac]ss$/i,
+                    test: /\.(s[ac]ss|css)$/i,
                     use: [
                         isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
                         'css-loader',

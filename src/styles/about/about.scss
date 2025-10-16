@@ -1,0 +1,121 @@
+@use "../palette";
+@use "../vars";
+
+.about-page {
+  background: linear-gradient(180deg, #010101 0%, #1A0E01 100%) no-repeat;
+
+  .section-intro {
+    padding: 80px 0;
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+
+      .info-block {
+        max-width: 425px;
+        margin-right: 20px;
+
+        h4 {
+          font-size: 12px;
+          line-height: 2.09;
+          word-spacing: 10px;
+          margin-bottom: 38px;
+
+          span {
+            color: palette.$orange-dark;
+            padding-left: 5px;
+          }
+        }
+
+        h1 {
+          font-size: 30px;
+          line-height: 1.8;
+          margin-bottom: 24px;
+        }
+
+        p {
+          font-size: 15px;
+          font-weight: vars.$regular;
+          line-height: 2;
+          margin-bottom: 48px;
+        }
+
+        .get-more-btn {
+          img {
+            margin-left: 18px;
+          }
+        }
+      }
+
+      .swiper {
+        width: 740px;
+        height: 656px;
+        margin: 0;
+      }
+    }
+  }
+
+  .section-work-with-us {
+    padding: 80px 0;
+
+    &-inner {
+
+      h3 {
+        font-size: 24px;
+        line-height: 1.8;
+        margin-bottom: 64px;
+      }
+
+      .work-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        .work-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 380px;
+          height: 350px;
+          padding: 64px 37px;
+          border-radius:20px;
+          background-color: #1C140F;
+
+          div {
+            width: 140px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 8px;
+          }
+
+          &:nth-child(1) .sup-title {
+            background-color: #B000DC1C;
+          }
+
+          &:nth-child(2) .sup-title {
+            background-color: #DC42001C;
+          }
+
+          &:nth-child(3) .sup-title {
+            background-color: #00DC8D1C;
+          }
+
+          h4 {
+            font-weight: vars.$semiBold;
+            font-size: 20px;
+            line-height: 1.88;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 1.88;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,9 @@
 import './styles/index.scss';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Form = document.querySelector("#subscribe-form");
 const Input = document.querySelector<HTMLInputElement>('#email');
@@ -28,3 +33,23 @@ Form.addEventListener("submit", e => {
 });
 
 CloseBtn.addEventListener("click", hideModal);
+
+
+const swiper = new Swiper('.swiper', {
+    modules: [Navigation, Pagination],
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+
+});
