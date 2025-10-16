@@ -31,20 +31,33 @@
                     <div class="info-block">
                         <h4>Home &gt;<span>About us</span></h4>
                         <h1>Lorem Ipsum is simply dummy text of the printing and.</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                        <button class="get-more-btn">Get in touch <img src="../src/img/arrow-white.svg" alt="arrow"></button>
+
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                        </p>
+                        <button class="get-more-btn">Get in touch <img src="../src/img/arrow-right.svg" alt="arrow">
+                        </button>
                     </div>
 
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="../src/img/about-for-slider.png" alt=""></div>
-                            <div class="swiper-slide"><img src="../src/img/about-for-slider.png" alt=""></div>
+                    <div class="games">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="../src/img/about-for-slider.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../src/img/about-for-slider.png" alt=""></div>
+                            </div>
+
+                            <div class="controls">
+                                <img class="button-prev" src="../src/img/arrow-left.svg" alt="">
+                                <span>
+                                    <i id="current">1</i>
+                                    of
+                                    <i id="total">2</i>
+                                </span>
+                                <img class="button-next" src="../src/img/arrow-right.svg" alt="">
+                            </div>
                         </div>
 
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
@@ -167,7 +180,7 @@
         <div id="modal" class="modal">
             <div class="modal-content">
                 <p>Subscription successfully completed</p>
-                <span id="close" class="close" >&times</span>
+                <span id="close" class="close">&times</span>
             </div>
         </div>
     </body>

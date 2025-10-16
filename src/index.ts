@@ -1,15 +1,12 @@
 import './styles/index.scss';
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import {Navigation} from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const Form = document.querySelector("#subscribe-form");
 const Input = document.querySelector<HTMLInputElement>('#email');
 const Modal = document.querySelector<HTMLDivElement>('#modal');
-const CloseBtn = document.querySelector('#close') ;
-
+const CloseBtn = document.querySelector('#close');
 
 document.querySelector('#copyright')
     .textContent = `${new Date().getFullYear()}`;
@@ -34,22 +31,22 @@ Form.addEventListener("submit", e => {
 
 CloseBtn.addEventListener("click", hideModal);
 
-
-const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
+new Swiper('.swiper', {
+    modules: [Navigation],
     direction: 'horizontal',
     loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-    },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
     },
 
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-
+    on: {
+        init: (swiper) => {
+            document.querySelector('#current').textContent = `${swiper.realIndex + 1}`;
+            document.querySelector('#total').textContent = `${swiper.slides.length}`;
+        },
+        slideChange: function (swiper) {
+            document.querySelector('#current').textContent = `${swiper.realIndex + 1}`;
+        }
+    }
 });
