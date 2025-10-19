@@ -7,6 +7,8 @@ const Form = document.querySelector("#subscribe-form");
 const Input = document.querySelector<HTMLInputElement>('#email');
 const Modal = document.querySelector<HTMLDivElement>('#modal');
 const CloseBtn = document.querySelector('#close');
+const BurgerToggle = document.querySelector<HTMLInputElement>('#burger-toggle');
+const Label = document.querySelector('#label');
 
 document.querySelector('#copyright')
     .textContent = `${new Date().getFullYear()}`;
@@ -50,3 +52,12 @@ new Swiper('.swiper', {
         }
     }
 });
+
+BurgerToggle.addEventListener('change', (event) => {
+
+    if ((event.target as HTMLInputElement).checked) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'visible';
+    }
+})
