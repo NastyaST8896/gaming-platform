@@ -21,7 +21,7 @@ export default (env: EnvVariables) => {
         entry: path.resolve(__dirname, 'src', 'index.ts'),
         output: {
             path: path.resolve(__dirname, 'build'),
-            filename: '[name].[contenthash].js',
+            filename: 'bundle.js',
             clean: true,
         },
         plugins: [
@@ -51,7 +51,7 @@ export default (env: EnvVariables) => {
                 },
 
                 {
-                    test: /\.tsx?$/,
+                    test: /\.ts?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/,
                 },
@@ -60,15 +60,24 @@ export default (env: EnvVariables) => {
                     test: /\.html$/i,
                     loader: "html-loader",
                 },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'img/[hash][ext][query]',
+
+                    }
+                },
             ],
         },
         resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
+            extensions: ['.ts', '.js'],
         },
         devtool: isDev && 'inline-source-map',
         devServer: isDev ? {
             port: env.port ?? 3000,
             open: true,
+            host: '0.0.0.0',
         } : undefined,
     }
     return config
