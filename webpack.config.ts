@@ -27,11 +27,13 @@ export default (env: EnvVariables) => {
         plugins: [
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'public', 'index.html'),
-                filename: 'index.html'
+                filename: 'index.html',
+                favicon: path.resolve(__dirname, 'public', 'favicon.ico')
             }),
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'public', 'about.html'),
-                filename: 'about.html'
+                filename: 'about.html',
+                favicon: path.resolve(__dirname, 'public', 'favicon.ico')
             }),
 
             isProd && new MiniCssExtractPlugin( {
